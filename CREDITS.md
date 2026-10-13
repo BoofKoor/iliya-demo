@@ -20,6 +20,10 @@
 
 - Land outlines from [Natural Earth](https://www.naturalearthdata.com) (public domain), via [world-atlas](https://github.com/topojson/world-atlas) (ISC). Rendered to `assets/img/world-dots.svg`.
 
+## Product photos
+
+- `assets/img/products/*.webp` are sample photos taken from the web for this demo only. They are not licensed for the site and must be replaced with Iliya's own photography before the official launch.
+
 ## Brand
 
 - The Iliya Pistachio logo (`assets/img/logo-original.webp`) belongs to the company. `logo.webp` / `logo.png` are the same logo with the white background removed.
