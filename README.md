@@ -4,10 +4,10 @@
 
 نسخه‌ی نمایشی وب‌سایت شرکت **پسته ایلیا**.
 
-- صفحه‌ی اصلی: <https://iliya.sedmehdi.com/>
-- تابلوی قیمت روز: <https://iliya.sedmehdi.com/prices.html>
+- صفحه‌ی اصلی: <https://boofkoor.github.io/iliya-demo/>
+- تابلوی قیمت روز: <https://boofkoor.github.io/iliya-demo/prices.html>
 
-این مخزن فقط فایل‌های نهایی سایت را برای نمایش آنلاین (GitHub Pages روی دامنه‌ی `iliya.sedmehdi.com`، تنظیم‌شده در فایل `CNAME`) نگه می‌دارد. قیمت‌ها و اطلاعات تماس نمونه هستند.
+این مخزن فقط فایل‌های نهایی سایت را برای نمایش آنلاین (GitHub Pages) نگه می‌دارد. قیمت‌ها و اطلاعات تماس نمونه هستند.
 
 فونت تیترها، ایران‌یکان X، تجاری است (fontiran.com) و استفاده از آن نیازمند لایسنس است؛ اعتبار بقیه‌ی منابع در [CREDITS.md](CREDITS.md).
 
