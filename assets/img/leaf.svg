@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" role="img" aria-label="برگ پسته">
+  <defs>
+    <linearGradient id="lg" x1="0" y1=".2" x2="1" y2=".8">
+      <stop offset="0" stop-color="#36B04F"/>
+      <stop offset=".55" stop-color="#1A8A3B"/>
+      <stop offset="1" stop-color="#0A5328"/>
+    </linearGradient>
+    <linearGradient id="lh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M8 66C52 14 150 -2 232 36C182 92 84 116 8 66Z" fill="url(#lg)"/>
+  <path d="M8 66C52 14 150 -2 232 36C160 30 80 38 8 66Z" fill="url(#lh)"/>
+  <path d="M14 65C80 50 150 42 226 38" fill="none" stroke="#9BE07A" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>
+  <path d="M70 54L96 30M110 47L138 22M150 43L176 22M84 52L118 78M128 45L160 70" fill="none" stroke="#9BE07A" stroke-width="1.1" stroke-linecap="round" opacity=".3"/>
+</svg>

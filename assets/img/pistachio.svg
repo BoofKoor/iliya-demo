@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" role="img" aria-label="پسته">
+  <defs>
+    <linearGradient id="pk" x1=".2" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#D9EA5E"/>
+      <stop offset=".42" stop-color="#93C83F"/>
+      <stop offset="1" stop-color="#3B7A2A"/>
+    </linearGradient>
+    <linearGradient id="pkf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4F38A" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#B9DA4C" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="pkb" cx=".5" cy=".95" r=".6">
+      <stop offset="0" stop-color="#6E3A4E" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#6E3A4E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="psl" cx=".34" cy=".32" r=".9">
+      <stop offset="0" stop-color="#FFF7E2"/>
+      <stop offset=".5" stop-color="#F6DFAD"/>
+      <stop offset="1" stop-color="#CFA86C"/>
+    </radialGradient>
+    <radialGradient id="psr" cx=".62" cy=".3" r=".95">
+      <stop offset="0" stop-color="#FBEBC8"/>
+      <stop offset=".55" stop-color="#EBCB90"/>
+      <stop offset="1" stop-color="#B98F55"/>
+    </radialGradient>
+    <linearGradient id="prim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F3D9A4"/>
+      <stop offset="1" stop-color="#C99C5E"/>
+    </linearGradient>
+  </defs>
+  <path d="M100 16C127 38 141 80 139 121C137 160 119 190 100 201C81 190 63 160 61 121C59 80 73 38 100 16Z" fill="url(#pk)"/>
+  <path d="M100 16C127 38 141 80 139 121C124 98 109 62 100 16Z" fill="url(#pkf)"/>
+  <path d="M100 16C127 38 141 80 139 121C137 160 119 190 100 201C81 190 63 160 61 121C59 80 73 38 100 16Z" fill="url(#pkb)"/>
+  <path d="M61 52C35 81 21 131 25 171C29 216 60 247 100 249L100 173C87 141 77 93 61 52Z" fill="url(#psl)"/>
+  <path d="M139 52C165 81 179 131 175 171C171 216 140 247 100 249L100 173C113 141 123 93 139 52Z" fill="url(#psr)"/>
+  <path d="M61 52C77 93 87 141 100 173" fill="none" stroke="url(#prim)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M139 52C123 93 113 141 100 173" fill="none" stroke="url(#prim)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M63 58C78 96 88 140 99 168" fill="none" stroke="#FFF8E6" stroke-width="1.6" stroke-linecap="round" opacity=".8"/>
+  <path d="M100 180V244" stroke="#B88E57" stroke-width="1.4" opacity=".55"/>
+  <ellipse cx="50" cy="150" rx="8" ry="40" fill="#FFFFFF" opacity=".32" transform="rotate(9 50 150)"/>
+  <ellipse cx="150" cy="200" rx="5" ry="20" fill="#FFFFFF" opacity=".14" transform="rotate(-20 150 200)"/>
+</svg>
