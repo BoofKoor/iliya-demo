@@ -2043,11 +2043,15 @@ a.ticker-label:hover { color: var(--c-cream); }
   .gift-grid,
   .contact-grid,
   .export-head { grid-template-columns: 1fr; }
-  /* phones and tablets: heading and story, then the picture, then the values */
+  /* phones and tablets: heading and the opening paragraph, the picture, then the rest of the story.
+     The picture gets the same 48px above (to the frame's apex) and below; the second paragraph
+     stays closer to the values it introduces. */
   .about-grid { gap: 0; }
   .about-copy { display: contents; }
-  .about-visual { margin-block: 36px 0; }
-  .about-copy .values { order: 1; margin-top: 44px; }
+  .about-visual { order: 1; margin-block: 44px 48px; }
+  .about-copy > p + p,
+  .about-copy .values { order: 2; }
+  .about-copy .values { margin-top: 20px; }
   .gift-grid { gap: 0; }
   .gift-copy { display: contents; }
   .gift-copy .section-head { order: -2; }
