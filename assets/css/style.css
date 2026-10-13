@@ -2043,12 +2043,11 @@ a.ticker-label:hover { color: var(--c-cream); }
   .gift-grid,
   .contact-grid,
   .export-head { grid-template-columns: 1fr; }
-  /* phones and tablets: heading, then the picture, then the text (same for the gift section) */
+  /* phones and tablets: heading and story, then the picture, then the values */
   .about-grid { gap: 0; }
   .about-copy { display: contents; }
-  .about-copy .section-head { order: -2; }
-  .about-visual { order: -1; margin-block: 22px 40px; }
-  .about-copy .values { margin-top: 20px; }
+  .about-visual { margin-block: 36px 0; }
+  .about-copy .values { order: 1; margin-top: 44px; }
   .gift-grid { gap: 0; }
   .gift-copy { display: contents; }
   .gift-copy .section-head { order: -2; }
