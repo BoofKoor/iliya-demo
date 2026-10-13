@@ -132,6 +132,21 @@
     }
   }
 
+  /* ---------- Hero medallion intro ---------- */
+  // On one-column layouts the medallion sits below the headline, out of view:
+  // hold its intro at the start and play it when it scrolls in.
+  const medallion = $('.medallion');
+  if (medallion && medallion.getAnimations && 'IntersectionObserver' in window && !reduceMotion
+      && medallion.getBoundingClientRect().top > window.innerHeight - medallion.offsetHeight * 0.35) {
+    medallion.classList.add('is-waiting');
+    medallion.getAnimations({ subtree: true }).forEach((a) => { a.currentTime = 0; });
+    new IntersectionObserver((entries, io) => {
+      if (!entries[0].isIntersecting) return;
+      medallion.classList.remove('is-waiting');
+      io.disconnect();
+    }, { threshold: 0.35 }).observe(medallion);
+  }
+
   /* ---------- Hero medallion tilt (pointer) ---------- */
   const heroEl = $('.hero');
   const heroVisual = $('.hero-visual');

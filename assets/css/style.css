@@ -524,6 +524,9 @@ p { text-wrap: pretty; }
   width: min(100%, 540px);
   aspect-ratio: 1;
 }
+/* below the fold (one-column layouts) the intro waits until the medallion is seen, see main.js */
+.medallion.is-waiting,
+.medallion.is-waiting * { animation-play-state: paused; }
 .medallion-glow {
   position: absolute;
   inset: 6%;
@@ -1955,19 +1958,8 @@ a.ticker-label:hover { color: var(--c-cream); }
   .menu-toggle { display: block; }
   .hero { padding-block: 128px 110px; }
   .hero-grid { grid-template-columns: 1fr; }
-  /* one column: the medallion leads, above the headline */
-  .hero-visual { order: -1; margin: 0 0 34px; }
-  .medallion { width: min(62vw, 400px); }
-  .hero-bg {
-    background:
-      radial-gradient(70% 34% at 50% 19%, rgba(38, 128, 66, .36), transparent 70%),
-      radial-gradient(40% 30% at 92% 6%, rgba(201, 164, 92, .14), transparent 70%),
-      linear-gradient(180deg, #050F0A 0%, #0A1B12 100%);
-  }
-  .hero-bg::before {
-    -webkit-mask-image: radial-gradient(70% 38% at 50% 21%, #000 10%, transparent 75%);
-    mask-image: radial-gradient(70% 38% at 50% 21%, #000 10%, transparent 75%);
-  }
+  .hero-visual { margin-top: 8px; }
+  .medallion { width: min(86vw, 470px); }
   .about-grid,
   .gift-grid,
   .contact-grid,
@@ -1985,8 +1977,7 @@ a.ticker-label:hover { color: var(--c-cream); }
   .site-header { padding-block: 12px; }
   .brand-logo { width: 44px; height: 44px; }
   .brand-text strong { font-size: 1.15rem; }
-  .hero { min-height: auto; padding-block: 100px 96px; }
-  .medallion { width: min(76vw, 300px); }
+  .hero { min-height: auto; padding-block: 112px 96px; }
   .eyebrow { font-size: .78rem; letter-spacing: .26em; gap: 12px; }
   .eyebrow-line { width: 36px; }
   .hero-actions .btn { flex: 1 1 100%; }
