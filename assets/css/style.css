@@ -2043,7 +2043,12 @@ a.ticker-label:hover { color: var(--c-cream); }
   .gift-grid,
   .contact-grid,
   .export-head { grid-template-columns: 1fr; }
-  .about-visual { order: -1; margin-bottom: 24px; }
+  /* phones and tablets: heading, then the picture, then the text (same for the gift section) */
+  .about-grid { gap: 0; }
+  .about-copy { display: contents; }
+  .about-copy .section-head { order: -2; }
+  .about-visual { order: -1; margin-block: 22px 40px; }
+  .about-copy .values { margin-top: 20px; }
   .gift-grid { gap: 0; }
   .gift-copy { display: contents; }
   .gift-copy .section-head { order: -2; }
@@ -2139,7 +2144,7 @@ a.ticker-label:hover { color: var(--c-cream); }
   .form-grid { grid-template-columns: 1fr; }
   .seal { width: 110px; left: -12px; bottom: 26px; }
   .seal-center b { font-size: 1.2rem; }
-  .about-visual { width: min(100% - 24px, 380px); }
+  .about-visual { width: min(100% - 64px, 320px); }
   .arch::after { left: -20px; right: -20px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-col:last-child { grid-column: 1 / -1; }
