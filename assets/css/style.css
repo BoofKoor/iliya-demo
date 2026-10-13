@@ -410,12 +410,18 @@ p { text-wrap: pretty; }
 }
 
 /* ---------- Hero ---------- */
+/* the hero and the price ticker under it fill the first screen together */
+.first-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+}
 .hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 100vh;
-  min-height: 100svh;
+  flex: 1 0 auto;
   display: grid;
   align-items: center;
   padding-block: 140px 120px;
@@ -650,6 +656,33 @@ p { text-wrap: pretty; }
   inset: 0;
   background: linear-gradient(180deg, transparent, var(--c-gold-light));
   animation: drip 2.4s var(--ease) infinite;
+}
+
+/* two columns: spacing, title and medallion follow the screen height, so the hero and the
+   ticker fit the first screen on laptops too (93px is the fixed header) */
+@media (min-width: 1025px) {
+  .hero { padding-block: calc(93px + clamp(8px, 3vh, 48px)) clamp(28px, 7vh, 100px); }
+  .hero .price-pill { margin-bottom: clamp(12px, 2.4vh, 24px); }
+  .hero .eyebrow { margin-bottom: clamp(12px, 2.6vh, 26px); }
+  .hero-title { font-size: clamp(2.7rem, min(5.6vw, 9vh), 5.4rem); }
+  .hero-lead { margin-top: clamp(14px, 2.8vh, 28px); }
+  .hero-actions { margin-top: clamp(20px, 4.2vh, 42px); }
+  .hero-badges { margin-top: clamp(20px, 5.4vh, 54px); }
+  .medallion { width: min(100%, 540px, 62vh); }
+}
+/* the scroll cue only where it has room between the content and the ticker; on shorter
+   screens drop the eyebrow (the medallion's ring carries the same words), and on the
+   shortest ones the badges too, so the ticker still shows */
+@media (min-width: 1025px) and (max-height: 1000px) {
+  .scroll-cue { display: none; }
+}
+@media (min-width: 1025px) and (max-height: 860px) {
+  .hero .eyebrow { display: none; }
+  .hero-lead { line-height: 1.85; }
+}
+@media (min-width: 1025px) and (max-height: 680px),
+       (min-width: 1025px) and (max-width: 1180px) and (max-height: 760px) {
+  .hero-badges { display: none; }
 }
 
 /* ---------- Marquee ---------- */
@@ -2082,7 +2115,7 @@ a.ticker-label:hover { color: var(--c-cream); }
   .site-header { padding-block: 12px; }
   .brand-logo { width: 44px; height: 44px; }
   .brand-text strong { font-size: 1.15rem; }
-  .hero { min-height: auto; padding-block: 112px 96px; }
+  .hero { padding-block: 112px 96px; }
   .eyebrow { font-size: .78rem; letter-spacing: .26em; gap: 12px; }
   .eyebrow-line { width: 36px; }
   .hero-actions .btn { flex: 1 1 100%; }
