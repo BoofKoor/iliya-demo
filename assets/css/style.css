@@ -919,10 +919,11 @@ a.ticker-label:hover { color: var(--c-cream); }
   position: absolute;
   left: 10%;
   right: 10%;
-  bottom: 9%;
+  bottom: 11%;
   height: 10%;
   border-radius: 50%;
   background: radial-gradient(closest-side, rgba(0, 0, 0, .55), transparent);
+  opacity: .7;
 }
 .arch-frame {
   position: absolute;
@@ -939,13 +940,16 @@ a.ticker-label:hover { color: var(--c-cream); }
 }
 .arch-frame path { vector-effect: non-scaling-stroke; }
 
-.comp { position: absolute; z-index: 1; filter: drop-shadow(0 22px 22px rgba(0, 0, 0, .45)); }
-.comp-leaf-1 { width: 62%; left: 36%; top: 21%; rotate: -38deg; filter: none; opacity: .95; }
-.comp-leaf-2 { width: 50%; left: -8%; top: 40%; rotate: 205deg; filter: none; opacity: .85; }
-.comp-nut-1 { width: 44%; left: 29%; top: 33%; rotate: -10deg; z-index: 2; }
-.comp-nut-2 { width: 27%; left: 12%; top: 62%; rotate: -36deg; z-index: 3; }
-.comp-nut-3 { width: 25%; left: 62%; top: 63%; rotate: 30deg; z-index: 3; }
-.comp-kernel { width: 13%; left: 50%; top: 73%; rotate: 72deg; z-index: 4; }
+.about-photo {
+  position: absolute;
+  z-index: 1;
+  left: -2%;
+  top: 38%;
+  width: 104%;
+  max-width: none;
+  height: auto;
+  filter: drop-shadow(0 26px 30px rgba(0, 0, 0, .35));
+}
 
 .seal {
   position: absolute;

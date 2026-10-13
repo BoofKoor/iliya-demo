@@ -22,7 +22,7 @@
 
 ## Product photos
 
-- `assets/img/products/*.webp` are sample photos taken from the web for this demo only. They are not licensed for the site and must be replaced with Iliya's own photography before the official launch.
+- `assets/img/products/*.webp` and `assets/img/about-pistachios.webp` are sample photos taken from the web for this demo only. They are not licensed for the site and must be replaced with Iliya's own photography before the official launch.
 
 ## Brand
 
