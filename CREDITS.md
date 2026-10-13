@@ -18,7 +18,12 @@
 
 ## Map
 
-- Land outlines from [Natural Earth](https://www.naturalearthdata.com) (public domain), via [world-atlas](https://github.com/topojson/world-atlas) (ISC). Rendered to `assets/img/world-dots.svg`.
+- Land outlines from [Natural Earth](https://www.naturalearthdata.com) (public domain), via [world-atlas](https://github.com/topojson/world-atlas) (ISC). Rendered to `assets/img/export-map.svg`.
+
+## Flags and marks
+
+- Round flags in `assets/img/flags/` from [circle-flags](https://github.com/HatScripts/circle-flags) by HatScripts — MIT License, full text in `assets/img/flags/LICENSE.md`.
+- The Halal mark (`#i-halal` in the icon sprite) is the word «حلال» set in Vazirmatn (SIL OFL) and converted to outlines.
 
 ## Product photos
 

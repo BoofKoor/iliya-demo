@@ -170,6 +170,35 @@
     });
   }
 
+  /* ---------- Export map: pointing at a country highlights its route ---------- */
+  const exportCard = $('[data-export-map]');
+  if (exportCard) {
+    const map = $('.map', exportCard);
+    const marks = $$('[data-c]', map);
+    const buttons = $$('.country-list button', exportCard);
+    let pinned = null;
+    const show = (c) => {
+      map.classList.toggle('has-active', !!c);
+      marks.forEach((el) => el.classList.toggle('is-active', el.dataset.c === c));
+      buttons.forEach((b) => b.classList.toggle('is-active', b.dataset.c === c));
+    };
+    buttons.forEach((b) => {
+      b.addEventListener('mouseenter', () => show(b.dataset.c));
+      b.addEventListener('focus', () => show(b.dataset.c));
+      b.addEventListener('blur', () => show(pinned));
+      b.addEventListener('click', () => {
+        pinned = pinned === b.dataset.c ? null : b.dataset.c;
+        buttons.forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.c === pinned)));
+        show(pinned);
+      });
+    });
+    $('.country-list', exportCard).addEventListener('mouseleave', () => show(pinned));
+    $$('.map-label[data-c]', map).forEach((label) => {
+      label.addEventListener('mouseenter', () => show(label.dataset.c));
+      label.addEventListener('mouseleave', () => show(pinned));
+    });
+  }
+
   /* ---------- Card spotlight ---------- */
   if (finePointer) {
     $$('.spot').forEach((card) => {
