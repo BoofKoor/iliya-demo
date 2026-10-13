@@ -538,25 +538,55 @@ p { text-wrap: pretty; }
   width: 100%;
   height: 100%;
   overflow: visible;
-  animation: spin 70s linear infinite;
 }
 .ring-line {
   fill: none;
   stroke: rgba(233, 210, 154, .32);
   stroke-width: 1;
 }
+.ring-line--fine { stroke: rgba(233, 210, 154, .14); }
 .ring-line--dashed {
   stroke: rgba(233, 210, 154, .28);
   stroke-dasharray: 2 8;
 }
+/* the two circles draw themselves in, then the lettering and the travelling light appear */
+.ring-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.8s var(--ease) .35s forwards;
+}
+.ring-deco {
+  transform-origin: 250px 250px;
+  animation: spin 120s linear infinite;
+}
+.ring-bead { fill: var(--c-gold); opacity: .85; }
+.ring-bead--sm { opacity: .5; }
 .medallion-ring,
 .seal svg { direction: ltr; }
+.ring-words {
+  opacity: 0;
+  animation: appear 1.2s ease 1.05s forwards;
+}
 .ring-text {
   font-family: var(--font-latin);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
+  letter-spacing: 5px;
   fill: var(--c-gold-light);
 }
+.ring-stars path { fill: var(--c-gold); }
+.ring-comet {
+  transform-origin: 250px 250px;
+  opacity: 0;
+  animation: appear 1s ease 2.1s forwards, spin 15s linear 2.1s infinite;
+}
+.ring-spark {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: twinkle 5.2s ease-in-out calc(2.6s + var(--k) * 1.3s) infinite;
+}
+.ring-spark path { fill: #F6E3B0; }
 .medallion-core {
   position: absolute;
   inset: 17%;
@@ -571,6 +601,7 @@ p { text-wrap: pretty; }
     inset 0 0 60px rgba(0, 0, 0, .55),
     0 40px 90px -30px rgba(0, 0, 0, .75),
     0 0 0 12px rgba(201, 164, 92, .035);
+  overflow: hidden;
 }
 .medallion-logo {
   width: 74%;
@@ -578,24 +609,16 @@ p { text-wrap: pretty; }
   animation: breathe 8s ease-in-out infinite;
 }
 
-.float { position: absolute; will-change: transform; }
-.float img {
-  width: 100%;
-  filter: drop-shadow(0 18px 22px rgba(0, 0, 0, .5));
-  animation: bob 7s ease-in-out infinite;
+/* a soft band of light crosses the logo every few seconds */
+.core-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 36%, rgba(255, 242, 205, .14) 47%, rgba(255, 242, 205, .04) 54%, transparent 62%);
+  translate: -115% 0;
+  animation: shine 9s ease-in-out 2.6s infinite;
 }
-.f1 { width: 23%; right: -3%; bottom: 3%; }
-.f1 img { rotate: 24deg; animation-duration: 8s; }
-.f2 { width: 15%; left: -2%; top: 13%; }
-.f2 img { rotate: -32deg; animation-delay: -2.5s; filter: blur(1px) drop-shadow(0 14px 18px rgba(0, 0, 0, .5)); }
-.f3 { width: 8.5%; right: 5%; top: 6%; }
-.f3 img { rotate: 40deg; animation-duration: 6s; animation-delay: -4s; }
-.f4 { width: 30%; left: -7%; bottom: 3%; }
-.f4 img { rotate: -28deg; animation-duration: 9s; animation-delay: -1s; }
-.f5 { width: 8%; left: 36%; top: -4%; }
-.f5 img { rotate: 14deg; opacity: .7; animation-delay: -3s; filter: blur(2.5px); }
-.f6 { width: 6.5%; left: -9%; top: 50%; }
-.f6 img { rotate: -18deg; opacity: .6; animation-delay: -5s; filter: blur(2px); }
 
 .scroll-cue {
   position: absolute;
@@ -1884,7 +1907,9 @@ a.ticker-label:hover { color: var(--c-cream); }
 
 /* ---------- Keyframes ---------- */
 @keyframes spin { to { transform: rotate(360deg); } }
-@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes appear { to { opacity: 1; } }
+@keyframes shine { 0% { translate: -115% 0; } 30%, 100% { translate: 115% 0; } }
 @keyframes glow { 0%, 100% { opacity: .75; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
 @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
 @keyframes drip { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
@@ -1930,8 +1955,19 @@ a.ticker-label:hover { color: var(--c-cream); }
   .menu-toggle { display: block; }
   .hero { padding-block: 128px 110px; }
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { margin-top: 8px; }
-  .medallion { width: min(86vw, 470px); }
+  /* one column: the medallion leads, above the headline */
+  .hero-visual { order: -1; margin: 0 0 34px; }
+  .medallion { width: min(62vw, 400px); }
+  .hero-bg {
+    background:
+      radial-gradient(70% 34% at 50% 19%, rgba(38, 128, 66, .36), transparent 70%),
+      radial-gradient(40% 30% at 92% 6%, rgba(201, 164, 92, .14), transparent 70%),
+      linear-gradient(180deg, #050F0A 0%, #0A1B12 100%);
+  }
+  .hero-bg::before {
+    -webkit-mask-image: radial-gradient(70% 38% at 50% 21%, #000 10%, transparent 75%);
+    mask-image: radial-gradient(70% 38% at 50% 21%, #000 10%, transparent 75%);
+  }
   .about-grid,
   .gift-grid,
   .contact-grid,
@@ -1949,7 +1985,8 @@ a.ticker-label:hover { color: var(--c-cream); }
   .site-header { padding-block: 12px; }
   .brand-logo { width: 44px; height: 44px; }
   .brand-text strong { font-size: 1.15rem; }
-  .hero { min-height: auto; padding-block: 112px 96px; }
+  .hero { min-height: auto; padding-block: 100px 96px; }
+  .medallion { width: min(76vw, 300px); }
   .eyebrow { font-size: .78rem; letter-spacing: .26em; gap: 12px; }
   .eyebrow-line { width: 36px; }
   .hero-actions .btn { flex: 1 1 100%; }
@@ -2016,4 +2053,5 @@ a.ticker-label:hover { color: var(--c-cream); }
   }
   .reveal-pending { opacity: 1; }
   .comets { display: none; }
+  .ring-spark { opacity: .6; }
 }

@@ -132,18 +132,15 @@
     }
   }
 
-  /* ---------- Hero parallax (pointer) ---------- */
+  /* ---------- Hero medallion tilt (pointer) ---------- */
   const heroEl = $('.hero');
-  const floats = $$('.hero [data-depth]');
-  if (heroEl && floats.length && finePointer && !reduceMotion) {
+  const heroVisual = $('.hero-visual');
+  if (heroEl && heroVisual && finePointer && !reduceMotion) {
     let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
     const tick = () => {
-      cx += (tx - cx) * 0.07;
-      cy += (ty - cy) * 0.07;
-      floats.forEach((el) => {
-        const d = Number(el.dataset.depth);
-        el.style.transform = `translate3d(${(cx * d * 70).toFixed(2)}px, ${(cy * d * 70).toFixed(2)}px, 0)`;
-      });
+      cx += (tx - cx) * 0.08;
+      cy += (ty - cy) * 0.08;
+      heroVisual.style.transform = `perspective(1000px) rotateY(${(cx * 10).toFixed(2)}deg) rotateX(${(-cy * 8).toFixed(2)}deg)`;
       raf = (Math.abs(tx - cx) > 0.0005 || Math.abs(ty - cy) > 0.0005) ? requestAnimationFrame(tick) : null;
     };
     heroEl.addEventListener('pointermove', (e) => {
