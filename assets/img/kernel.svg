@@ -15,9 +15,10 @@
       <stop offset=".5" stop-color="#FFFFFF" stop-opacity=".55"/>
       <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
+    <clipPath id="kc"><path d="M73.03 16.79C94.09 41.84 105.44 83.88 102 120C98 160 82 190 60 195C38 190 22 158 19 120C16.42 85.6 28.63 42.32 50.55 16.89C56.71 9.73 66.96 9.56 73.03 16.79Z"/></clipPath>
   </defs>
-  <path d="M62 6C90 28 106 78 102 120C98 160 82 190 60 195C38 190 22 158 19 120C16 80 33 28 62 6Z" fill="url(#kg)"/>
-  <path d="M62 6C90 28 106 78 102 120C98 160 82 190 60 195C38 190 22 158 19 120C16 80 33 28 62 6Z" fill="url(#ks)"/>
-  <path d="M62 14C58 60 58 130 60 188" fill="none" stroke="#3C6E25" stroke-width="1.4" opacity=".35"/>
+  <path d="M73.03 16.79C94.09 41.84 105.44 83.88 102 120C98 160 82 190 60 195C38 190 22 158 19 120C16.42 85.6 28.63 42.32 50.55 16.89C56.71 9.73 66.96 9.56 73.03 16.79Z" fill="url(#kg)"/>
+  <path d="M73.03 16.79C94.09 41.84 105.44 83.88 102 120C98 160 82 190 60 195C38 190 22 158 19 120C16.42 85.6 28.63 42.32 50.55 16.89C56.71 9.73 66.96 9.56 73.03 16.79Z" fill="url(#ks)"/>
+  <path d="M62 14C58 60 58 130 60 188" fill="none" stroke="#3C6E25" stroke-width="1.4" opacity=".35" clip-path="url(#kc)"/>
   <ellipse cx="78" cy="78" rx="7" ry="42" fill="url(#kh)" transform="rotate(-6 78 78)"/>
 </svg>
