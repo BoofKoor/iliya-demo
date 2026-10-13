@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>پیش‌نمایش سه طرح هیرو — پسته ایلیا</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>/* ---------- preview chrome ---------- */
+.variant-tag {
+  position: absolute; z-index: 5; left: 50%; bottom: 24px; translate: -50% 0; margin: 0;
+  display: inline-flex; align-items: center; gap: 10px; padding: 7px 18px 7px 8px; border-radius: 999px;
+  background: rgba(6, 18, 12, .78); border: 1px solid rgba(233, 210, 154, .35);
+  color: var(--c-gold-light); font-family: var(--font-display); font-weight: 800; font-size: .95rem; white-space: nowrap;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.variant-tag b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--grad-gold); color: #0A1B12; }
+.variant-nav { position: fixed; z-index: 90; left: 16px; top: 50%; translate: 0 -50%; display: flex; flex-direction: column; gap: 10px; }
+.variant-nav a {
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; text-decoration: none;
+  background: rgba(6, 18, 12, .78); border: 1px solid rgba(233, 210, 154, .4); color: var(--c-gold-light);
+  font-family: var(--font-display); font-weight: 800;
+}
+.hv .scroll-cue { display: none; }
+/* play each hero's intro when it scrolls into view */
+.hv:not(.is-live) *, .hv:not(.is-live) *::before, .hv:not(.is-live) *::after { animation-play-state: paused !important; }
+
+/* ---------- shared fixes ---------- */
+.hv .medallion-core { overflow: hidden; }
+.hv .core-shine {
+  position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+  background: linear-gradient(115deg, transparent 36%, rgba(255, 242, 205, .14) 47%, rgba(255, 242, 205, .04) 54%, transparent 62%);
+  translate: -115% 0; animation: shine 9s ease-in-out 2.6s infinite;
+}
+@keyframes shine { 0% { translate: -115% 0; } 30%, 100% { translate: 115% 0; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes appear { to { opacity: 1; } }
+@keyframes spin-rev { to { transform: rotate(-360deg); } }
+.hv .hero-visual { transition: transform .15s linear; }
+@media (max-width: 1024px) {
+  .hv .hero-visual { order: -1; margin: 0 0 34px; }
+  .hv .medallion { width: min(62vw, 400px); }
+  .hv .hero-bg {
+    background:
+      radial-gradient(70% 34% at 50% 19%, rgba(38, 128, 66, .36), transparent 70%),
+      radial-gradient(40% 30% at 92% 6%, rgba(201, 164, 92, .14), transparent 70%),
+      linear-gradient(180deg, #050F0A 0%, #0A1B12 100%);
+  }
+  .hv .hero-bg::before {
+    -webkit-mask-image: radial-gradient(70% 38% at 50% 21%, #000 10%, transparent 75%);
+    mask-image: radial-gradient(70% 38% at 50% 21%, #000 10%, transparent 75%);
+  }
+}
+@media (max-width: 720px) {
+  .hv.hero { padding-top: 100px; }
+  .hv .medallion { width: min(76vw, 300px); }
+  .variant-tag { bottom: 14px; font-size: .85rem; }
+  .variant-nav { left: 8px; }
+}
+
+/* ---------- 1 · the medallion, fixed ---------- */
+.v1 .medallion-ring { animation: none; }
+.v1 .ring-line--fine { stroke: rgba(233, 210, 154, .14); }
+.v1 .ring-deco { transform-origin: 250px 250px; animation: spin 120s linear infinite; }
+.v1 .ring-bead { fill: var(--c-gold); opacity: .85; }
+.v1 .ring-bead--sm { opacity: .5; }
+.v1 .ring-text { font-size: 16px; letter-spacing: 5px; }
+.v1 .ring-stars path { fill: var(--c-gold); }
+.v1 .ring-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.8s var(--ease) .35s forwards; }
+.v1 .ring-words { opacity: 0; animation: appear 1.2s ease 1.05s forwards; }
+.v1 .float { position: absolute; will-change: transform; }
+.v1 .float img {
+  width: 100%; rotate: var(--rot);
+  filter: drop-shadow(0 16px 20px rgba(0, 0, 0, .45));
+  animation: v1-in 1.4s var(--ease) var(--in) both, v1-bob 8s ease-in-out calc(var(--in) + 1.4s) infinite;
+}
+.v1 .i2 img { animation-duration: 1.4s, 9.5s; filter: drop-shadow(0 10px 14px rgba(0, 0, 0, .4)) brightness(.93); }
+.v1 .i3 img { animation-duration: 1.4s, 7s; filter: drop-shadow(0 10px 14px rgba(0, 0, 0, .4)) brightness(.95); }
+.v1 .i4 img { animation-duration: 1.4s, 11s; }
+@keyframes v1-in { from { opacity: 0; translate: 0 28px; scale: .86; } }
+@keyframes v1-bob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(3deg); } }
+
+/* ---------- 2 · golden shamseh ---------- */
+.m2 .medallion-core { inset: 20%; }
+.m2 .shamseh { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.m2 .sh-line { fill: none; stroke: url(#gold-2); stroke-width: 1.2; opacity: .75; }
+.m2 .sh-line--thin { stroke-width: .7; opacity: .45; }
+.m2 .sh-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.2s var(--ease) .3s forwards; }
+.m2 .sh-petals { transform-origin: 250px 250px; animation: spin 160s linear infinite; }
+.m2 .sh-petals path {
+  fill: url(#petal-2); stroke: url(#gold-2); stroke-width: 1.1;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: draw 1.6s var(--ease) calc(.45s + var(--i) * 45ms) forwards, petal-fill 1.4s ease calc(1.4s + var(--i) * 45ms) backwards;
+}
+@keyframes petal-fill { from { fill-opacity: 0; } }
+.m2 .sh-tips circle { fill: var(--c-gold); opacity: 0; animation: appear .9s ease 2s forwards; }
+.m2 .sh-tips { opacity: .9; }
+.m2 .sh-star { transform-origin: 250px 250px; animation: spin-rev 220s linear infinite; }
+.m2 .sh-star path { fill: none; stroke: url(#gold-2); stroke-width: 1.3; }
+.m2 .sh-star .sh-inner { stroke-width: .9; opacity: .55; }
+.m2 .spark { transform-box: fill-box; transform-origin: center; opacity: 0; animation: twinkle 4.8s ease-in-out calc(2.4s + var(--k) * .95s) infinite; }
+.m2 .spark path { fill: #F6E3B0; }
+
+/* ---------- 3 · pistachio orbit ---------- */
+.m3 { container-type: inline-size; }
+.m3 .orbit-scene { position: absolute; inset: 0; transform-style: preserve-3d; perspective: 1500px; }
+.m3 .medallion-core { inset: 24%; transform: translateZ(0); background: radial-gradient(circle at 50% 30%, #163022, #08150E 72%); }
+.m3 .orbit { position: absolute; inset: 6%; transform-style: preserve-3d; }
+.m3 .o2 { inset: 12%; }
+.m3 .o1 { animation: orbit-1 36s linear infinite; }
+.m3 .o2 { animation: orbit-2 27s linear infinite reverse; }
+@keyframes orbit-1 { from { transform: translateY(9cqi) rotateX(64deg) rotateY(-10deg) rotateZ(0deg); } to { transform: translateY(9cqi) rotateX(64deg) rotateY(-10deg) rotateZ(360deg); } }
+@keyframes orbit-2 { from { transform: translateY(18cqi) rotateX(74deg) rotateY(18deg) rotateZ(0deg); } to { transform: translateY(18cqi) rotateX(74deg) rotateY(18deg) rotateZ(360deg); } }
+.m3 .orbit-line { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(233, 210, 154, .42); }
+.m3 .o2 .orbit-line { border: 1px dashed rgba(233, 210, 154, .3); }
+.m3 .orbiter { position: absolute; left: 50%; top: 50%; transform-style: preserve-3d; transform: rotateZ(var(--a)) translateX(var(--r)) rotateZ(calc(var(--a) * -1)); }
+.m3 .o1 .orbiter { --r: 44cqi; }
+.m3 .o2 .orbiter { --r: 38cqi; }
+.m3 .bb { position: absolute; transform-style: preserve-3d; }
+.m3 .o1 .bb { animation: bb-1 36s linear infinite; }
+.m3 .o2 .bb { animation: bb-2 27s linear infinite reverse; }
+@keyframes bb-1 { from { transform: rotateZ(0deg) rotateY(10deg) rotateX(-64deg); } to { transform: rotateZ(-360deg) rotateY(10deg) rotateX(-64deg); } }
+@keyframes bb-2 { from { transform: rotateZ(0deg) rotateY(-18deg) rotateX(-74deg); } to { transform: rotateZ(-360deg) rotateY(-18deg) rotateX(-74deg); } }
+.m3 .bb img { display: block; max-width: none; translate: -50% -50%; rotate: var(--rot); filter: drop-shadow(0 14px 16px rgba(0, 0, 0, .45)); animation: sway 7s ease-in-out infinite; }
+.m3 .o2 .bb img { animation-duration: 5.5s; animation-delay: -2s; }
+@keyframes sway { 0%, 100% { rotate: calc(var(--rot) - 12deg); } 50% { rotate: calc(var(--rot) + 12deg); } }
+@media (max-width: 720px) {
+  .m3 .o1 .orbiter { --r: 39cqi; }
+  .m3 .o2 .orbiter { --r: 34cqi; }
+}
+</style>
+  <script src="assets/js/prices-data.js" defer></script>
+  <script src="assets/js/prices.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script>document.addEventListener('DOMContentLoaded', () => {
+  const heroes = document.querySelectorAll('.hv');
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('is-live'); }), { threshold: .35 });
+  heroes.forEach((h) => io.observe(h));
+  if (!matchMedia('(pointer: fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  heroes.forEach((hero) => {
+    const floats = hero.querySelectorAll('[data-px]');
+    const tilt = hero.querySelector('[data-tilt]') ? hero.querySelector('.hero-visual') : null;
+    const depth = [.5, .3, .7, .25];
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+    const tick = () => {
+      cx += (tx - cx) * .08; cy += (ty - cy) * .08;
+      floats.forEach((el, i) => { const d = depth[i % 4]; el.style.transform = `translate3d(${(cx * d * 36).toFixed(2)}px, ${(cy * d * 36).toFixed(2)}px, 0)`; });
+      if (tilt) tilt.style.transform = `perspective(1000px) rotateY(${(cx * 10).toFixed(2)}deg) rotateX(${(-cy * 8).toFixed(2)}deg)`;
+      raf = (Math.abs(tx - cx) > .0005 || Math.abs(ty - cy) > .0005) ? requestAnimationFrame(tick) : null;
+    };
+    hero.addEventListener('pointermove', (e) => {
+      const r = hero.getBoundingClientRect();
+      tx = (e.clientX - r.left) / r.width - .5; ty = (e.clientY - r.top) / r.height - .5;
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+    hero.addEventListener('pointerleave', () => { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(tick); });
+  });
+});
+</script>
+</head>
+<body>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="i-sprout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></symbol>
+  <symbol id="i-droplets" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
+  <symbol id="i-microscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></symbol>
+  <symbol id="i-flask-conical" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></symbol>
+  <symbol id="i-scan-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></symbol>
+  <symbol id="i-package-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="m16 17 2 2 4-4"/><path d="M21 11.127V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l1.32-.753"/><path d="M3.29 7 12 12l8.71-5"/><path d="m7.5 4.27 8.997 5.148"/></symbol>
+  <symbol id="i-thermometer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></symbol>
+  <symbol id="i-file-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m9 15 2 2 4-4"/></symbol>
+  <symbol id="i-boxes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+  <symbol id="i-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></symbol>
+  <symbol id="i-badge-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m16 9-5.5 5.5L8 12"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-hand-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></symbol>
+  <symbol id="i-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></symbol>
+  <symbol id="i-trending-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 17h6v-6"/><path d="m22 17-8.5-8.5-5 5L2 7"/></symbol>
+  <symbol id="i-calculator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
+  <symbol id="i-bell-ring" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M22 8c0-2.3-.8-4.3-2-6"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/><path d="M4 2C2.8 3.7 2 5.7 2 8"/></symbol>
+  <symbol id="i-share-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></symbol>
+  <symbol id="i-chart-spline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></symbol>
+  <symbol id="i-calendar-days" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 13h.01"/><path d="M12 13h.01"/><path d="M16 13h.01"/><path d="M8 17h.01"/><path d="M12 17h.01"/><path d="M16 17h.01"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-refresh-cw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="currentColor"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol>
+  </svg>
+  <header class="site-header" data-header>
+    <div class="scroll-progress" data-progress></div>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="پسته ایلیا — صفحه‌ی اصلی">
+        <img class="brand-logo" src="assets/img/logo.webp" alt="" width="600" height="600">
+        <span class="brand-text">
+          <strong>پسته ایلیا</strong>
+          <small lang="en" dir="ltr">ILIYA PISTACHIO</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="منوی اصلی">
+        <a href="index.html#about">داستان ما</a>
+        <a href="index.html#products">محصولات</a>
+        <a href="prices.html" class="nav-live"><i class="live-dot" aria-hidden="true"></i>قیمت روز</a>
+        <a href="index.html#process">فرآیند تولید</a>
+        <a href="index.html#export">صادرات</a>
+        <a href="index.html#gift">هدایا</a>
+        <a href="index.html#contact">تماس</a>
+      </nav>
+      <a class="btn btn-gold btn-sm header-cta" href="index.html#contact">استعلام قیمت</a>
+      <button class="menu-toggle" type="button" aria-label="منو" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" data-menu inert>
+    <nav class="mobile-nav" aria-label="منوی موبایل">
+      <a href="index.html#about" style="--i:0">داستان ما</a>
+      <a href="index.html#products" style="--i:1">محصولات</a>
+      <a href="prices.html" style="--i:2">قیمت روز</a>
+      <a href="index.html#process" style="--i:3">فرآیند تولید</a>
+      <a href="index.html#export" style="--i:4">صادرات</a>
+      <a href="index.html#gift" style="--i:5">هدایا</a>
+      <a href="index.html#contact" style="--i:6">تماس با ما</a>
+    </nav>
+    <a class="btn btn-gold" href="index.html#contact">استعلام قیمت</a>
+    <p class="mobile-menu-note" lang="en" dir="ltr">ILIYA · PREMIUM PERSIAN PISTACHIO</p>
+  </div>
+  <nav class="variant-nav" aria-label="طرح‌ها"><a href="#v1">۱</a><a href="#v2">۲</a><a href="#v3">۳</a></nav>
+  <main id="main">
+<section class="hero hv v1" id="v1">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <a class="price-pill" href="prices.html">
+            <i class="live-dot" aria-hidden="true"></i>
+            <span>قیمت روز پسته</span>
+            <b data-price-pill-date>به‌روز شد</b>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+          </a>
+          <p class="eyebrow"><span class="eyebrow-line"></span><span lang="en" dir="ltr">Premium Persian Pistachio</span></p>
+          <h1 class="hero-title">
+            <span class="line"><span>طلای سبز ایران</span></span>
+            <span class="line"><span class="gold-text">با امضای ایلیا</span></span>
+          </h1>
+          <p class="hero-lead">پسته‌ی ممتاز ایرانی؛ دست‌چین از باغ‌های برتر، فرآوری‌شده با دقتی وسواس‌گونه و بسته‌بندی‌شده برای سفره‌های ایرانی و بازارهای جهانی.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#products">
+              مشاهده‌ی محصولات
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#contact" data-request="export">سفارش عمده و صادراتی</a>
+          </div>
+          <ul class="hero-badges">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>دست‌چین از باغ‌های برتر</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>کنترل کیفیت آزمایشگاهی</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>ارسال داخلی و صادراتی</li>
+          </ul>
+        </div>
+
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="medallion m1">
+            <div class="medallion-glow"></div>
+            <svg class="medallion-ring" viewBox="0 0 500 500">
+              <defs>
+                <path id="arc-top-1" d="M46 250A204 204 0 0 1 454 250"/>
+                <path id="arc-bot-1" d="M33 250A217 217 0 0 0 467 250"/>
+                <linearGradient id="gold-1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6E3B0"/><stop offset=".5" stop-color="#C9A45C"/><stop offset="1" stop-color="#8C6A2F"/></linearGradient>
+              </defs>
+              <circle class="ring-line ring-draw" cx="250" cy="250" r="246" pathLength="1"/>
+              <circle class="ring-line ring-line--fine ring-draw" cx="250" cy="250" r="194" pathLength="1"/>
+              <g class="ring-deco">
+                <circle class="ring-line ring-line--dashed" cx="250" cy="250" r="186"/>
+                <circle class="ring-bead" cx="436" cy="250" r="3"/><circle class="ring-bead" cx="250" cy="436" r="3"/><circle class="ring-bead" cx="64" cy="250" r="3"/><circle class="ring-bead" cx="250" cy="64" r="3"/>
+                <circle class="ring-bead ring-bead--sm" cx="381.52" cy="381.52" r="1.8"/><circle class="ring-bead ring-bead--sm" cx="118.48" cy="381.52" r="1.8"/><circle class="ring-bead ring-bead--sm" cx="118.48" cy="118.48" r="1.8"/><circle class="ring-bead ring-bead--sm" cx="381.52" cy="118.48" r="1.8"/>
+              </g>
+              <g class="ring-words">
+                <text class="ring-text"><textPath href="#arc-top-1" startOffset="50%" text-anchor="middle">PREMIUM PERSIAN PISTACHIO</textPath></text>
+                <text class="ring-text"><textPath href="#arc-bot-1" startOffset="50%" text-anchor="middle">FROM THE ORCHARDS OF IRAN</textPath></text>
+                <g class="ring-stars"><path class="" d="M40 243C41.12 248.88 41.12 248.88 47 250C41.12 251.12 41.12 251.12 40 257C38.88 251.12 38.88 251.12 33 250C38.88 248.88 38.88 248.88 40 243Z"/><path class="" d="M460 243C461.12 248.88 461.12 248.88 467 250C461.12 251.12 461.12 251.12 460 257C458.88 251.12 458.88 251.12 453 250C458.88 248.88 458.88 248.88 460 243Z"/></g>
+              </g>
+            </svg>
+            <div class="medallion-core"><img class="medallion-logo" src="assets/img/logo.webp" alt="" width="600" height="600"><i class="core-shine"></i></div>
+            <div class="float i1" data-px style="left:79.7%;top:73.72%;width:21.85%;--rot:24deg;--in:1.15s"><img src="assets/img/pistachio.svg" alt=""></div>
+            <div class="float i2" data-px style="left:1.13%;top:3.16%;width:14.07%;--rot:-30deg;--in:1.3s"><img src="assets/img/pistachio.svg" alt=""></div>
+            <div class="float i3" data-px style="left:83.1%;top:1.95%;width:8.15%;--rot:38deg;--in:1.45s"><img src="assets/img/kernel.svg" alt=""></div>
+            <div class="float i4" data-px style="left:-9.82%;top:79.36%;width:31.11%;--rot:-32deg;--in:1.6s"><img src="assets/img/leaf.svg" alt=""></div>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#about"><span>کشف کنید</span><i aria-hidden="true"></i></a>
+    <p class="variant-tag"><b>۱</b>طرح ۱: مدال، اصلاح‌شده</p>
+    </section>
+<section class="hero hv v2" id="v2">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <a class="price-pill" href="prices.html">
+            <i class="live-dot" aria-hidden="true"></i>
+            <span>قیمت روز پسته</span>
+            <b data-price-pill-date>به‌روز شد</b>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+          </a>
+          <p class="eyebrow"><span class="eyebrow-line"></span><span lang="en" dir="ltr">Premium Persian Pistachio</span></p>
+          <h1 class="hero-title">
+            <span class="line"><span>طلای سبز ایران</span></span>
+            <span class="line"><span class="gold-text">با امضای ایلیا</span></span>
+          </h1>
+          <p class="hero-lead">پسته‌ی ممتاز ایرانی؛ دست‌چین از باغ‌های برتر، فرآوری‌شده با دقتی وسواس‌گونه و بسته‌بندی‌شده برای سفره‌های ایرانی و بازارهای جهانی.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#products">
+              مشاهده‌ی محصولات
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#contact" data-request="export">سفارش عمده و صادراتی</a>
+          </div>
+          <ul class="hero-badges">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>دست‌چین از باغ‌های برتر</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>کنترل کیفیت آزمایشگاهی</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>ارسال داخلی و صادراتی</li>
+          </ul>
+        </div>
+
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="medallion m2" data-tilt>
+            <div class="medallion-glow"></div>
+            <svg class="shamseh" viewBox="0 0 500 500">
+              <defs>
+                <linearGradient id="gold-2" x1="60" y1="40" x2="440" y2="460" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F6E3B0"/><stop offset=".45" stop-color="#D9B46A"/><stop offset=".75" stop-color="#A9823D"/><stop offset="1" stop-color="#E9D29A"/></linearGradient>
+                <radialGradient id="petal-2" cx="250" cy="250" r="240" gradientUnits="userSpaceOnUse"><stop offset=".62" stop-color="#C9A45C" stop-opacity="0"/><stop offset="1" stop-color="#C9A45C" stop-opacity=".16"/></radialGradient>
+              </defs>
+              <circle class="sh-line sh-draw" cx="250" cy="250" r="247" pathLength="1"/>
+              <circle class="sh-line sh-line--thin sh-draw" cx="250" cy="250" r="241" pathLength="1"/>
+              <g class="sh-petals"><path pathLength="1" style="--i:0" d="M410.72 229.7Q462.98 229.12 486 250Q462.98 270.88 410.72 270.3"/><path pathLength="1" style="--i:1" d="M410.5 271.99Q461.13 284.95 477.96 311.08Q450.32 325.29 399.99 311.21"/><path pathLength="1" style="--i:2" d="M399.34 312.78Q444.89 338.4 454.38 368Q424 374.57 379.04 347.95"/><path pathLength="1" style="--i:3" d="M378.01 349.29Q415.36 385.83 416.88 416.88Q385.83 415.36 349.29 378.01"/><path pathLength="1" style="--i:4" d="M347.95 379.04Q374.57 424 368 454.38Q338.4 444.89 312.78 399.34"/><path pathLength="1" style="--i:5" d="M311.21 399.99Q325.29 450.32 311.08 477.96Q284.95 461.13 271.99 410.5"/><path pathLength="1" style="--i:6" d="M270.3 410.72Q270.88 462.98 250 486Q229.12 462.98 229.7 410.72"/><path pathLength="1" style="--i:7" d="M228.01 410.5Q215.05 461.13 188.92 477.96Q174.71 450.32 188.79 399.99"/><path pathLength="1" style="--i:8" d="M187.22 399.34Q161.6 444.89 132 454.38Q125.43 424 152.05 379.04"/><path pathLength="1" style="--i:9" d="M150.71 378.01Q114.17 415.36 83.12 416.88Q84.64 385.83 121.99 349.29"/><path pathLength="1" style="--i:10" d="M120.96 347.95Q76 374.57 45.62 368Q55.11 338.4 100.66 312.78"/><path pathLength="1" style="--i:11" d="M100.01 311.21Q49.68 325.29 22.04 311.08Q38.87 284.95 89.5 271.99"/><path pathLength="1" style="--i:12" d="M89.28 270.3Q37.02 270.88 14 250Q37.02 229.12 89.28 229.7"/><path pathLength="1" style="--i:13" d="M89.5 228.01Q38.87 215.05 22.04 188.92Q49.68 174.71 100.01 188.79"/><path pathLength="1" style="--i:14" d="M100.66 187.22Q55.11 161.6 45.62 132Q76 125.43 120.96 152.05"/><path pathLength="1" style="--i:15" d="M121.99 150.71Q84.64 114.17 83.12 83.12Q114.17 84.64 150.71 121.99"/><path pathLength="1" style="--i:16" d="M152.05 120.96Q125.43 76 132 45.62Q161.6 55.11 187.22 100.66"/><path pathLength="1" style="--i:17" d="M188.79 100.01Q174.71 49.68 188.92 22.04Q215.05 38.87 228.01 89.5"/><path pathLength="1" style="--i:18" d="M229.7 89.28Q229.12 37.02 250 14Q270.88 37.02 270.3 89.28"/><path pathLength="1" style="--i:19" d="M271.99 89.5Q284.95 38.87 311.08 22.04Q325.29 49.68 311.21 100.01"/><path pathLength="1" style="--i:20" d="M312.78 100.66Q338.4 55.11 368 45.62Q374.57 76 347.95 120.96"/><path pathLength="1" style="--i:21" d="M349.29 121.99Q385.83 84.64 416.88 83.12Q415.36 114.17 378.01 150.71"/><path pathLength="1" style="--i:22" d="M379.04 152.05Q424 125.43 454.38 132Q444.89 161.6 399.34 187.22"/><path pathLength="1" style="--i:23" d="M399.99 188.79Q450.32 174.71 477.96 188.92Q461.13 215.05 410.5 228.01"/><g class="sh-tips"><circle cx="492" cy="250" r="2.6"/><circle cx="483.75" cy="312.63" r="1.6"/><circle cx="459.58" cy="371" r="2.6"/><circle cx="421.12" cy="421.12" r="1.6"/><circle cx="371" cy="459.58" r="2.6"/><circle cx="312.63" cy="483.75" r="1.6"/><circle cx="250" cy="492" r="2.6"/><circle cx="187.37" cy="483.75" r="1.6"/><circle cx="129" cy="459.58" r="2.6"/><circle cx="78.88" cy="421.12" r="1.6"/><circle cx="40.42" cy="371" r="2.6"/><circle cx="16.25" cy="312.63" r="1.6"/><circle cx="8" cy="250" r="2.6"/><circle cx="16.25" cy="187.37" r="1.6"/><circle cx="40.42" cy="129" r="2.6"/><circle cx="78.88" cy="78.88" r="1.6"/><circle cx="129" cy="40.42" r="2.6"/><circle cx="187.37" cy="16.25" r="1.6"/><circle cx="250" cy="8" r="2.6"/><circle cx="312.63" cy="16.25" r="1.6"/><circle cx="371" cy="40.42" r="2.6"/><circle cx="421.12" cy="78.88" r="1.6"/><circle cx="459.58" cy="129" r="2.6"/><circle cx="483.75" cy="187.37" r="1.6"/></g></g>
+              <g class="sh-star"><path class="sh-draw" pathLength="1" d="M462.17 277.93L412.6 317.35L419.78 380.27L357.14 389.63L331.89 447.71L272.97 424.49L222.07 462.17L182.65 412.6L119.73 419.78L110.37 357.14L52.29 331.89L75.51 272.97L37.83 222.07L87.4 182.65L80.22 119.73L142.86 110.37L168.11 52.29L227.03 75.51L277.93 37.83L317.35 87.4L380.27 80.22L389.63 142.86L447.71 168.11L424.49 227.03Z"/><path class="sh-inner sh-draw" pathLength="1" d="M428 250L397.82 311.23L375.87 375.87L311.23 397.82L250 428L188.77 397.82L124.13 375.87L102.18 311.23L72 250L102.18 188.77L124.13 124.13L188.77 102.18L250 72L311.23 102.18L375.87 124.13L397.82 188.77Z"/></g>
+              <circle class="sh-line sh-draw" cx="250" cy="250" r="157" pathLength="1"/>
+              <circle class="sh-line sh-line--thin sh-draw" cx="250" cy="250" r="152" pathLength="1"/>
+              <g class="spark" style="--k:0"><path class="" d="M361.73 30.86C363.17 38.42 363.17 38.42 370.73 39.86C363.17 41.3 363.17 41.3 361.73 48.86C360.29 41.3 360.29 41.3 352.73 39.86C360.29 38.42 360.29 38.42 361.73 30.86Z"/></g><g class="spark" style="--k:1"><path class="" d="M458.38 351.8C459.82 359.36 459.82 359.36 467.38 360.8C459.82 362.24 459.82 362.24 458.38 369.8C456.94 362.24 456.94 362.24 449.38 360.8C456.94 359.36 456.94 359.36 458.38 351.8Z"/></g><g class="spark" style="--k:2"><path class="" d="M138.27 451.14C139.71 458.7 139.71 458.7 147.27 460.14C139.71 461.58 139.71 461.58 138.27 469.14C136.83 461.58 136.83 461.58 129.27 460.14C136.83 458.7 136.83 458.7 138.27 451.14Z"/></g><g class="spark" style="--k:3"><path class="" d="M28.23 160.28C29.67 167.84 29.67 167.84 37.23 169.28C29.67 170.72 29.67 170.72 28.23 178.28C26.79 170.72 26.79 170.72 19.23 169.28C26.79 167.84 26.79 167.84 28.23 160.28Z"/></g><g class="spark" style="--k:4"><path class="" d="M332.08 15.47C333.52 23.03 333.52 23.03 341.08 24.47C333.52 25.91 333.52 25.91 332.08 33.47C330.64 25.91 330.64 25.91 323.08 24.47C330.64 23.03 330.64 23.03 332.08 15.47Z"/></g>
+            </svg>
+            <div class="medallion-core"><img class="medallion-logo" src="assets/img/logo.webp" alt="" width="600" height="600"><i class="core-shine"></i></div>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#about"><span>کشف کنید</span><i aria-hidden="true"></i></a>
+    <p class="variant-tag"><b>۲</b>طرح ۲: شمسه‌ی طلایی</p>
+    </section>
+<section class="hero hv v3" id="v3">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <a class="price-pill" href="prices.html">
+            <i class="live-dot" aria-hidden="true"></i>
+            <span>قیمت روز پسته</span>
+            <b data-price-pill-date>به‌روز شد</b>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+          </a>
+          <p class="eyebrow"><span class="eyebrow-line"></span><span lang="en" dir="ltr">Premium Persian Pistachio</span></p>
+          <h1 class="hero-title">
+            <span class="line"><span>طلای سبز ایران</span></span>
+            <span class="line"><span class="gold-text">با امضای ایلیا</span></span>
+          </h1>
+          <p class="hero-lead">پسته‌ی ممتاز ایرانی؛ دست‌چین از باغ‌های برتر، فرآوری‌شده با دقتی وسواس‌گونه و بسته‌بندی‌شده برای سفره‌های ایرانی و بازارهای جهانی.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#products">
+              مشاهده‌ی محصولات
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#contact" data-request="export">سفارش عمده و صادراتی</a>
+          </div>
+          <ul class="hero-badges">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>دست‌چین از باغ‌های برتر</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>کنترل کیفیت آزمایشگاهی</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>ارسال داخلی و صادراتی</li>
+          </ul>
+        </div>
+
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="medallion m3" data-tilt>
+            <div class="medallion-glow"></div>
+            <div class="orbit-scene">
+              <div class="orbit o1"><i class="orbit-line"></i><span class="orbiter" style="--a:20deg"><span class="bb"><img src="assets/img/pistachio.svg" alt="" style="width:13.5cqi;--rot:22deg"></span></span><span class="orbiter" style="--a:140deg"><span class="bb"><img src="assets/img/leaf.svg" alt="" style="width:17cqi;--rot:-26deg"></span></span><span class="orbiter" style="--a:255deg"><span class="bb"><img src="assets/img/pistachio.svg" alt="" style="width:11cqi;--rot:-34deg"></span></span></div>
+              <div class="orbit o2"><i class="orbit-line"></i><span class="orbiter" style="--a:80deg"><span class="bb"><img src="assets/img/kernel.svg" alt="" style="width:6.5cqi;--rot:30deg"></span></span><span class="orbiter" style="--a:215deg"><span class="bb"><img src="assets/img/pistachio.svg" alt="" style="width:12cqi;--rot:14deg"></span></span><span class="orbiter" style="--a:320deg"><span class="bb"><img src="assets/img/kernel.svg" alt="" style="width:5.5cqi;--rot:-40deg"></span></span></div>
+              <div class="medallion-core"><img class="medallion-logo" src="assets/img/logo.webp" alt="" width="600" height="600"><i class="core-shine"></i></div>
+            </div>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#about"><span>کشف کنید</span><i aria-hidden="true"></i></a>
+    <p class="variant-tag"><b>۳</b>طرح ۳: مدار پسته</p>
+    </section>
+  </main>
+  <button class="to-top" type="button" aria-label="بازگشت به بالای صفحه" data-to-top>
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+  </button>
+</body>
+</html>
