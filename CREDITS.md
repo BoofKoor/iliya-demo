@@ -23,7 +23,7 @@
 ## Flags and marks
 
 - Round flags in `assets/img/flags/` from [circle-flags](https://github.com/HatScripts/circle-flags) by HatScripts — MIT License, full text in `assets/img/flags/LICENSE.md`.
-- The Halal mark (`#i-halal` in the icon sprite) is the word «حلال» set in Vazirmatn (SIL OFL) and converted to outlines.
+- Certification seals in `assets/img/certs/` are placeholders for the demo: `halal.webp` and `iso-9001.webp` are generic seals supplied by the client; `iso-22000.svg` is an original drawing, lettered in Inter (SIL OFL) converted to outlines. All three are to be replaced with the marks of the bodies that issued Iliya's certificates; ISO's own logo may not be used by certified companies.
 
 ## Product photos
 

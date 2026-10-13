@@ -1644,20 +1644,24 @@ a.ticker-label:hover { color: var(--c-cream); }
   color: var(--c-forest);
 }
 .export-points p { margin: 0; font-size: .95rem; line-height: 1.9; color: var(--c-muted-dark); }
-.ep-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.ep-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
 .ep-badges > span {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: .25em .8em .25em .55em;
+  padding-block: 2px;
+  padding-inline: 2px 11px;
   border-radius: 999px;
-  font-size: .8rem;
+  font-size: .78rem;
   font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
   color: var(--c-forest);
-  background: rgba(30, 122, 62, .07);
-  border: 1px solid rgba(30, 122, 62, .22);
+  background: #fff;
+  border: 1px solid rgba(154, 118, 55, .2);
+  box-shadow: 0 6px 16px -12px rgba(16, 38, 26, .55);
 }
-.ep-badges .icon { width: 1.35em; height: 1.35em; color: var(--c-emerald); }
+.ep-badges img { flex: none; width: 28px; height: 28px; }
 
 /* ---------- Gift ---------- */
 .gift {
@@ -2048,6 +2052,9 @@ a.ticker-label:hover { color: var(--c-cream); }
   .country-list { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
   .country-list small { display: none; }
   .export-panel .btn { align-self: center; }
+  .export-points { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .export-points li { display: grid; grid-template-columns: 54px minmax(0, 1fr); column-gap: 20px; padding: 24px 26px; }
+  .export-points .ep-icon { grid-row: span 3; margin: 0; }
 }
 
 @media (max-width: 720px) {
@@ -2092,7 +2099,6 @@ a.ticker-label:hover { color: var(--c-cream); }
   .step-node { grid-row: span 3; width: 64px; height: 64px; margin: 0; box-shadow: none; }
   .step-num { margin-top: 2px; }
   .features { grid-template-columns: 1fr; }
-  .export-points { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
   .stats li:nth-child(3)::before { display: none; }
   /* phones: title, an edge-to-edge map, the countries as chips, then the button */
@@ -2121,6 +2127,9 @@ a.ticker-label:hover { color: var(--c-cream); }
   .export-points .ep-icon { grid-row: span 3; width: 48px; height: 48px; margin: 0; border-radius: 14px; }
   .export-points h3 { margin-bottom: 4px; font-size: 1.02rem; }
   .export-points p { font-size: .88rem; line-height: 1.8; }
+  .export-points .ep-badges { grid-column: 1 / -1; gap: 5px; margin-top: 14px; }
+  .ep-badges > span { gap: 5px; padding-inline: 2px 9px; font-size: .74rem; }
+  .ep-badges img { width: 26px; height: 26px; }
   .form-grid { grid-template-columns: 1fr; }
   .seal { width: 110px; left: -12px; bottom: 26px; }
   .seal-center b { font-size: 1.2rem; }
