@@ -22,10 +22,10 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/vazirmatn-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/iranyekanx-variable-fanum.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=56cc4916">
+  <link rel="stylesheet" href="assets/css/style.css?v=14580cfc">
   <script src="assets/js/prices-data.js?v=27fa54cf" defer></script>
-  <script src="assets/js/prices.js?v=a5551249" defer></script>
-  <script src="assets/js/main.js?v=0fcda54b" defer></script>
+  <script src="assets/js/prices.js?v=6ad2e6c9" defer></script>
+  <script src="assets/js/main.js?v=412d3279" defer></script>
 </head>
 <body>
   <!-- Icons: Lucide (ISC License, lucide.dev) & Simple Icons (CC0) -->
@@ -202,9 +202,9 @@
       <a class="scroll-cue" href="#about"><span>کشف کنید</span><i aria-hidden="true"></i></a>
     </section>
 
-    <!-- ============ Price ticker (filled from the daily price data; variety names are the fallback) ============ -->
-    <div class="marquee marquee--ticker" data-price-ticker>
-      <a class="ticker-label" href="prices.html"><i class="live-dot" aria-hidden="true"></i>قیمت روز</a>
+    <!-- ============ Price ticker (filled from the daily price data; variety names are the fallback). The whole strip links to the price board. ============ -->
+    <a class="marquee marquee--ticker" href="prices.html" data-price-ticker>
+      <span class="ticker-label"><i class="live-dot" aria-hidden="true"></i>قیمت روز</span>
       <div class="marquee-track" aria-hidden="true">
         <div class="marquee-group">
           <span class="mq-fa">اکبری</span><span class="mq-en">Akbari</span><i>✦</i>
@@ -221,7 +221,7 @@
           <span class="mq-fa">بادامی</span><span class="mq-en">Badami</span><i>✦</i>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- ============ About ============ -->
     <section class="section section--light about" id="about">
@@ -706,16 +706,16 @@
               </div>
               <div class="field">
                 <label for="f-amount">مقدار تقریبی</label>
-                <select id="f-amount" name="amount">
-                  <option>کمتر از ۱۰۰ کیلوگرم</option>
-                  <option>۱۰۰ تا ۵۰۰ کیلوگرم</option>
-                  <option>۵۰۰ کیلوگرم تا ۵ تن</option>
-                  <option>بیش از ۵ تن</option>
+                <select id="f-amount" name="amount" data-amount-select>
+                  <option value="lt100">کمتر از ۱۰۰ کیلوگرم</option>
+                  <option value="100-500">۱۰۰ تا ۵۰۰ کیلوگرم</option>
+                  <option value="500-5000">۵۰۰ کیلوگرم تا ۵ تن</option>
+                  <option value="gt5000">بیش از ۵ تن</option>
                 </select>
               </div>
               <div class="field field--full">
                 <label for="f-message">توضیحات</label>
-                <textarea id="f-message" name="message" rows="4" placeholder="سایز، نوع بسته‌بندی، مقصد ارسال یا هر نکته‌ی دیگر…"></textarea>
+                <textarea id="f-message" name="message" rows="4" placeholder="سایز، نوع بسته‌بندی، مقصد ارسال یا هر نکته‌ی دیگر…" data-message></textarea>
               </div>
             </div>
             <button class="btn btn-gold btn-block" type="submit">

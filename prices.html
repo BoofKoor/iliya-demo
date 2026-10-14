@@ -22,11 +22,11 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/vazirmatn-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/iranyekanx-variable-fanum.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=56cc4916">
-  <link rel="stylesheet" href="assets/css/prices.css?v=e90c20a8">
+  <link rel="stylesheet" href="assets/css/style.css?v=14580cfc">
+  <link rel="stylesheet" href="assets/css/prices.css?v=92ee44d2">
   <script src="assets/js/prices-data.js?v=27fa54cf" defer></script>
-  <script src="assets/js/prices.js?v=a5551249" defer></script>
-  <script src="assets/js/main.js?v=0fcda54b" defer></script>
+  <script src="assets/js/prices.js?v=6ad2e6c9" defer></script>
+  <script src="assets/js/main.js?v=412d3279" defer></script>
 </head>
 <body>
   <!-- Icons: Lucide (ISC License, lucide.dev) & Simple Icons (CC0) -->
@@ -53,6 +53,7 @@
   <symbol id="i-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></symbol>
   <symbol id="i-badge-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m16 9-5.5 5.5L8 12"/></symbol>
   <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></symbol>
   <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
@@ -101,7 +102,7 @@
         <a href="index.html#gift">هدایا</a>
         <a href="index.html#contact">تماس</a>
       </nav>
-      <a class="btn btn-gold btn-sm header-cta" href="index.html#contact">استعلام قیمت</a>
+      <a class="btn btn-gold btn-sm header-cta" href="index.html?request=sell#contact">فروش محصول</a>
       <button class="menu-toggle" type="button" aria-label="منو" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
         <span></span><span></span>
       </button>
@@ -112,13 +113,13 @@
     <nav class="mobile-nav" aria-label="منوی موبایل">
       <a href="index.html#about" style="--i:0">داستان ما</a>
       <a href="index.html#products" style="--i:1">محصولات</a>
-      <a href="prices.html" style="--i:2">قیمت روز</a>
+      <a href="prices.html" style="--i:2" aria-current="page">قیمت روز</a>
       <a href="index.html#process" style="--i:3">فرآیند تولید</a>
       <a href="index.html#export" style="--i:4">صادرات</a>
       <a href="index.html#gift" style="--i:5">هدایا</a>
       <a href="index.html#contact" style="--i:6">تماس با ما</a>
     </nav>
-    <a class="btn btn-gold" href="index.html#contact">استعلام قیمت</a>
+    <a class="btn btn-gold" href="index.html?request=sell#contact">فروش محصول</a>
     <p class="mobile-menu-note" lang="en" dir="ltr">ILIYA · PREMIUM PERSIAN PISTACHIO</p>
   </div>
 
@@ -140,51 +141,31 @@
           <div class="market-date">
             <span class="md-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar-days"/></svg></span>
             <div>
-              <small data-price-weekday>امروز</small>
-              <strong data-price-date>قیمت‌های امروز</strong>
-              <span>آخرین به‌روزرسانی: ساعت <b data-price-time>۰۹:۳۰</b></span>
+              <small data-price-status-title>قیمت‌های امروز</small>
+              <strong data-price-date>—</strong>
+              <span class="md-status"><i class="live-dot" aria-hidden="true"></i><span data-price-status>به‌روزرسانی هر روز کاری، ساعت ۹:۳۰</span></span>
             </div>
           </div>
         </div>
-        <ul class="market-stats">
-          <li class="ms ms--index">
-            <span class="ms-label"><svg class="icon" aria-hidden="true"><use href="#i-chart-spline"/></svg>شاخص قیمت پسته</span>
-            <div class="ms-row"><b class="ms-value" data-price-index>—</b><span data-price-index-change></span></div>
-            <span class="ms-spark" data-price-index-spark></span>
-          </li>
-          <li class="ms">
-            <span class="ms-label"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg>بیشترین رشد امروز</span>
-            <div class="ms-mover" data-price-gainer>—</div>
-          </li>
-          <li class="ms">
-            <span class="ms-label"><svg class="icon" aria-hidden="true"><use href="#i-trending-down"/></svg>بیشترین افت امروز</span>
-            <div class="ms-mover" data-price-loser>—</div>
-          </li>
-        </ul>
       </div>
     </section>
 
-    <!-- ============ Ticker ============ -->
-    <div class="marquee marquee--ticker" data-price-ticker>
-      <span class="ticker-label"><i class="live-dot" aria-hidden="true"></i>نرخ امروز</span>
-      <div class="marquee-track" aria-hidden="true"></div>
-    </div>
-
-    <!-- ============ Price board ============ -->
+    <!-- ============ Price board (the market summary shows above the board on wide screens, below it on phones and tablets) ============ -->
     <section class="board-section section--dark" id="board" aria-labelledby="board-title">
-      <div class="container">
+      <div class="container board-wrap">
         <div class="board-grid">
           <div class="board">
             <div class="board-top">
-              <h2 class="board-title" id="board-title">تابلوی قیمت امروز</h2>
-              <span class="sample-badge" data-sample-note hidden><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>قیمت‌ها نمونه است</span>
+              <h2 class="board-title" id="board-title" data-day-text="تابلوی قیمت {day}">تابلوی قیمت امروز</h2>
               <button class="btn btn-ghost btn-sm board-share" type="button" data-price-share>
-                <svg class="icon" aria-hidden="true"><use href="#i-share-2"/></svg>ارسال قیمت‌ها
+                <svg class="icon" aria-hidden="true"><use href="#i-share-2"/></svg><span>ارسال<span class="board-share-more"> قیمت‌ها</span></span>
               </button>
+              <span class="sample-badge" data-sample-note hidden><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>قیمت‌ها نمونه است</span>
             </div>
             <div class="chips" data-price-tabs role="group" aria-label="فیلتر بر اساس رقم"></div>
+            <p class="board-hint"><svg class="icon" aria-hidden="true"><use href="#i-chart-spline"/></svg>برای دیدن نمودار و جزئیات، روی هر ردیف بزنید.</p>
             <div class="board-head" aria-hidden="true">
-              <span>محصول</span><span>قیمت امروز</span><span>تغییر روزانه</span><span>روند هفته</span>
+              <span>محصول</span><span data-day-text="قیمت {day}">قیمت امروز</span><span>تغییر روزانه</span><span>روند هفته</span>
             </div>
             <ul class="board-list" data-price-list></ul>
             <noscript><p class="board-noscript">برای دیدن قیمت‌ها، جاوااسکریپت مرورگر را فعال کنید.</p></noscript>
@@ -195,7 +176,7 @@
           </div>
 
           <div class="detail-backdrop" data-detail-backdrop></div>
-          <aside class="detail" data-price-detail aria-label="جزئیات و نمودار قیمت">
+          <aside class="detail" id="price-detail" data-price-detail aria-label="جزئیات و نمودار قیمت">
             <button class="detail-close" type="button" data-detail-close aria-label="بستن نمودار">
               <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
             </button>
@@ -217,12 +198,30 @@
               <span class="chart-unit">میلیون تومان</span>
               <div class="chart-tip" hidden></div>
             </div>
+            <p class="sr-only" aria-live="polite" data-chart-live></p>
             <dl class="detail-stats" data-detail-stats></dl>
             <button class="btn btn-gold btn-block" type="button" data-detail-calc>
               <svg class="icon" aria-hidden="true"><use href="#i-calculator"/></svg>محاسبه‌ی ارزش محصول من
             </button>
           </aside>
         </div>
+
+        <ul class="market-stats" aria-label="خلاصه‌ی بازار">
+          <li class="ms ms--market">
+            <span class="ms-label"><svg class="icon" aria-hidden="true"><use href="#i-chart-spline"/></svg><span data-day-text="وضعیت بازار {day}">وضعیت بازار امروز</span></span>
+            <p class="ms-row"><b class="ms-value" data-market-change>—</b><small>میانگین تغییر قیمت‌ها</small></p>
+            <p class="ms-breadth" data-market-breadth></p>
+            <div class="ms-trend"><span class="ms-spark" data-market-spark></span><small data-market-span>روند یک ماه اخیر</small></div>
+          </li>
+          <li class="ms">
+            <span class="ms-label"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg><span data-day-text="بیشترین رشد {day}">بیشترین رشد امروز</span></span>
+            <div class="ms-mover" data-price-gainer>—</div>
+          </li>
+          <li class="ms">
+            <span class="ms-label"><svg class="icon" aria-hidden="true"><use href="#i-trending-down"/></svg><span data-day-text="بیشترین افت {day}">بیشترین افت امروز</span></span>
+            <div class="ms-mover" data-price-loser>—</div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -240,10 +239,6 @@
             <li><svg class="icon" aria-hidden="true"><use href="#i-handshake"/></svg>تسویه‌حساب سریع و شفاف</li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>امکان هماهنگی حمل بار از باغ</li>
           </ul>
-          <a class="btn btn-gold" href="index.html?request=sell#contact">
-            هماهنگی فروش محصول
-            <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
-          </a>
         </div>
 
         <div class="calc-card" data-calc>
@@ -253,8 +248,8 @@
             <select id="calc-product" data-calc-product></select>
           </div>
           <div class="field">
-            <label for="calc-weight">وزن محصول (کیلوگرم)</label>
-            <input id="calc-weight" type="text" inputmode="decimal" dir="ltr" autocomplete="off" value="۱۰۰۰" data-calc-weight>
+            <div class="field-head"><label for="calc-weight">وزن محصول (کیلوگرم)</label><small id="calc-tons" data-calc-tons></small></div>
+            <input id="calc-weight" type="text" inputmode="decimal" dir="ltr" autocomplete="off" value="۱٬۰۰۰" aria-describedby="calc-tons" data-calc-weight>
             <div class="kg-chips">
               <button type="button" data-kg="500">۵۰۰ کیلو</button>
               <button type="button" data-kg="1000">۱ تن</button>
@@ -269,6 +264,10 @@
             <p data-calc-words></p>
             <p class="calc-unit" data-calc-unit></p>
           </div>
+          <a class="btn btn-gold btn-block calc-sell" href="index.html?request=sell#contact" data-calc-sell>
+            هماهنگی فروش این محصول
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+          </a>
           <p class="calc-note">این عدد تخمینی است؛ مبلغ نهایی پس از توزین و کارشناسی نمونه مشخص می‌شود.</p>
         </div>
       </div>
@@ -278,7 +277,7 @@
     <!-- لینک کانال‌ها را با آدرس‌های واقعی جایگزین کنید -->
     <section class="section section--dark channel-section">
       <div class="container">
-        <div class="channel">
+        <div class="channel" data-reveal>
           <span class="channel-icon"><svg class="icon" aria-hidden="true"><use href="#i-bell-ring"/></svg></span>
           <div class="channel-main">
             <div class="channel-copy">
@@ -333,12 +332,12 @@
         <a href="index.html#gift">جعبه‌های هدیه</a>
       </nav>
       <div class="footer-col">
-        <h4>ارقام پسته</h4>
-        <a href="index.html#products">اکبری</a>
-        <a href="index.html#products">احمدآقایی</a>
-        <a href="index.html#products">کله‌قوچی</a>
-        <a href="index.html#products">فندقی</a>
-        <a href="index.html#products">بادامی</a>
+        <h4>قیمت ارقام پسته</h4>
+        <a href="prices.html?g=akbari#board">اکبری</a>
+        <a href="prices.html?g=ahmad-aghaei#board">احمدآقایی</a>
+        <a href="prices.html?g=kalleh-ghouchi#board">کله‌قوچی</a>
+        <a href="prices.html?g=fandoghi#board">فندقی</a>
+        <a href="prices.html?g=badami#board">بادامی</a>
       </div>
       <div class="footer-col">
         <h4>ارتباط با ما</h4>

@@ -215,6 +215,8 @@
   const success = $('[data-form-success]');
   const productSelect = $('[data-product-select]');
   const requestSelect = $('[data-request-select]');
+  const amountSelect = $('[data-amount-select]');
+  const message = $('[data-message]');
 
   const flash = (select) => {
     const field = select.closest('.field');
@@ -237,9 +239,16 @@
       flash(requestSelect);
     });
   });
-  // links from other pages, e.g. index.html?request=sell#contact from the price board
-  const requested = new URLSearchParams(location.search).get('request');
-  if (requestSelect && requested && $(`option[value="${CSS.escape(requested)}"]`, requestSelect)) requestSelect.value = requested;
+  // links from other pages: the price board's calculator sends the farmer's variety, amount and a note,
+  // e.g. index.html?request=sell&product=akbari&amount=500-5000&note=…#contact
+  const query = new URLSearchParams(location.search);
+  const preset = (select, value) => {
+    if (select && value && $(`option[value="${CSS.escape(value)}"]`, select)) select.value = value;
+  };
+  preset(requestSelect, query.get('request'));
+  preset(productSelect, query.get('product'));
+  preset(amountSelect, query.get('amount'));
+  if (message && query.get('note') && !message.value) message.value = query.get('note').slice(0, 300);
 
   const phoneOk = (value) => {
     const digits = toEn(value).replace(/[\s\-()]/g, '');

@@ -400,7 +400,8 @@ p { text-wrap: pretty; }
   transform: none;
   transition-delay: calc(var(--i) * 60ms + 120ms);
 }
-.mobile-nav a:hover { color: var(--c-gold-light); }
+.mobile-nav a:hover,
+.mobile-nav a[aria-current="page"] { color: var(--c-gold-light); }
 .mobile-menu-note {
   margin: 0;
   font-family: var(--font-latin);
@@ -714,6 +715,8 @@ p { text-wrap: pretty; }
   background: var(--c-pistachio);
   animation: live 2s ease-out infinite;
 }
+/* today's prices are not out yet: a still, grey dot instead of the live green one */
+.live-dot.is-stale { background: var(--c-muted-light); animation: none; }
 .nav-live { display: inline-flex; align-items: center; gap: 7px; }
 
 .price-pill {
@@ -740,7 +743,11 @@ p { text-wrap: pretty; }
 .price-pill:hover { border-color: var(--c-gold-light); background: rgba(233, 210, 154, .08); }
 .price-pill:hover .icon { transform: translateX(-3px); }
 
-.marquee--ticker { padding-block: 16px; }
+/* the whole ticker links to the price board, and stands still under the pointer so a price can be read */
+.marquee--ticker { display: block; padding-block: 16px; }
+.marquee--ticker:hover .marquee-track,
+.marquee--ticker:focus-visible .marquee-track { animation-play-state: paused; }
+.marquee--ticker:focus-visible { outline-offset: -3px; border-radius: 0; }
 .ticker-label {
   position: absolute;
   top: 0;
@@ -766,7 +773,7 @@ p { text-wrap: pretty; }
   pointer-events: none;
   background: linear-gradient(to left, var(--c-ink), transparent);
 }
-a.ticker-label:hover { color: var(--c-cream); }
+.marquee--ticker:hover .ticker-label { color: var(--c-cream); }
 .tk { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
 .tk-name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--c-cream); }
 .tk-name small { font-size: .8rem; font-weight: 400; color: var(--c-muted-light); }
