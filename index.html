@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/vazirmatn-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/iranyekanx-variable-fanum.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=14580cfc">
+  <link rel="stylesheet" href="assets/css/style.css?v=5af3b0c9">
   <script src="assets/js/prices-data.js?v=27fa54cf" defer></script>
   <script src="assets/js/prices.js?v=6ad2e6c9" defer></script>
   <script src="assets/js/main.js?v=412d3279" defer></script>
@@ -123,105 +123,109 @@
 
   <main id="main">
 
-    <!-- ============ Hero ============ -->
-    <section class="hero" id="home">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <a class="price-pill" href="prices.html">
-            <i class="live-dot" aria-hidden="true"></i>
-            <span>قیمت روز پسته</span>
-            <b data-price-pill-date>به‌روز شد</b>
-            <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
-          </a>
-          <p class="eyebrow"><span class="eyebrow-line"></span><span lang="en" dir="ltr">Premium Persian Pistachio</span></p>
-          <h1 class="hero-title">
-            <span class="line"><span>طلای سبز ایران</span></span>
-            <span class="line"><span class="gold-text">با امضای ایلیا</span></span>
-          </h1>
-          <p class="hero-lead">پسته‌ی ممتاز ایرانی؛ دست‌چین از باغ‌های برتر، فرآوری‌شده با دقتی وسواس‌گونه و بسته‌بندی‌شده برای سفره‌های ایرانی و بازارهای جهانی.</p>
-          <div class="hero-actions">
-            <a class="btn btn-gold" href="#products">
-              مشاهده‌ی محصولات
+    <!-- ============ First screen: the hero and the price ticker fill it together ============ -->
+    <div class="first-screen">
+
+      <!-- ============ Hero ============ -->
+      <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <a class="price-pill" href="prices.html">
+              <i class="live-dot" aria-hidden="true"></i>
+              <span>قیمت روز پسته</span>
+              <b data-price-pill-date>به‌روز شد</b>
               <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
             </a>
-            <a class="btn btn-ghost" href="#contact" data-request="export">سفارش عمده و صادراتی</a>
+            <p class="eyebrow"><span class="eyebrow-line"></span><span lang="en" dir="ltr">Premium Persian Pistachio</span></p>
+            <h1 class="hero-title">
+              <span class="line"><span>طلای سبز ایران</span></span>
+              <span class="line"><span class="gold-text">با امضای ایلیا</span></span>
+            </h1>
+            <p class="hero-lead">پسته‌ی ممتاز ایرانی؛ دست‌چین از باغ‌های برتر، فرآوری‌شده با دقتی وسواس‌گونه و بسته‌بندی‌شده برای سفره‌های ایرانی و بازارهای جهانی.</p>
+            <div class="hero-actions">
+              <a class="btn btn-gold" href="#products">
+                مشاهده‌ی محصولات
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#contact" data-request="export">سفارش عمده و صادراتی</a>
+            </div>
+            <ul class="hero-badges">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>دست‌چین از باغ‌های برتر</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>کنترل کیفیت آزمایشگاهی</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>ارسال داخلی و صادراتی</li>
+            </ul>
           </div>
-          <ul class="hero-badges">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>دست‌چین از باغ‌های برتر</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>کنترل کیفیت آزمایشگاهی</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-badge-check"/></svg>ارسال داخلی و صادراتی</li>
-          </ul>
-        </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="medallion">
-            <div class="medallion-glow"></div>
-            <svg class="medallion-ring" viewBox="0 0 500 500">
-              <defs>
-                <path id="ring-arc-top" d="M46 250A204 204 0 0 1 454 250"/>
-                <path id="ring-arc-bottom" d="M33 250A217 217 0 0 0 467 250"/>
-                <linearGradient id="ring-comet-fade" gradientUnits="userSpaceOnUse" x1="414.61" y1="67.19" x2="496" y2="250"><stop offset="0" stop-color="#F6E3B0" stop-opacity="0"/><stop offset="1" stop-color="#FFF4D6"/></linearGradient>
-                <filter id="ring-comet-glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3"/></filter>
-              </defs>
-              <circle class="ring-line ring-draw" cx="250" cy="250" r="246" pathLength="1"/>
-              <circle class="ring-line ring-line--fine ring-draw" cx="250" cy="250" r="194" pathLength="1"/>
-              <g class="ring-comet">
-                <path d="M414.61 67.19A246 246 0 0 1 496 250" fill="none" stroke="url(#ring-comet-fade)" stroke-width="2.2" stroke-linecap="round"/>
-                <circle cx="496" cy="250" r="6" fill="#F6E3B0" opacity=".55" filter="url(#ring-comet-glow)"/>
-                <circle cx="496" cy="250" r="2.4" fill="#FFF8E6"/>
-              </g>
-              <g class="ring-deco">
-                <circle class="ring-line ring-line--dashed" cx="250" cy="250" r="186"/>
-                <circle class="ring-bead" cx="436" cy="250" r="3"/>
-                <circle class="ring-bead" cx="250" cy="436" r="3"/>
-                <circle class="ring-bead" cx="64" cy="250" r="3"/>
-                <circle class="ring-bead" cx="250" cy="64" r="3"/>
-                <circle class="ring-bead ring-bead--sm" cx="381.52" cy="381.52" r="1.8"/>
-                <circle class="ring-bead ring-bead--sm" cx="118.48" cy="381.52" r="1.8"/>
-                <circle class="ring-bead ring-bead--sm" cx="118.48" cy="118.48" r="1.8"/>
-                <circle class="ring-bead ring-bead--sm" cx="381.52" cy="118.48" r="1.8"/>
-              </g>
-              <g class="ring-words">
-                <text class="ring-text"><textPath href="#ring-arc-top" startOffset="50%" text-anchor="middle">PREMIUM PERSIAN PISTACHIO</textPath></text>
-                <text class="ring-text"><textPath href="#ring-arc-bottom" startOffset="50%" text-anchor="middle">FROM THE ORCHARDS OF IRAN</textPath></text>
-                <g class="ring-stars"><path d="M40 243C41.12 248.88 41.12 248.88 47 250C41.12 251.12 41.12 251.12 40 257C38.88 251.12 38.88 251.12 33 250C38.88 248.88 38.88 248.88 40 243Z"/><path d="M460 243C461.12 248.88 461.12 248.88 467 250C461.12 251.12 461.12 251.12 460 257C458.88 251.12 458.88 251.12 453 250C458.88 248.88 458.88 248.88 460 243Z"/></g>
-              </g>
-              <g class="ring-spark" style="--k:0"><path d="M461.19 77C462.47 83.72 462.47 83.72 469.19 85C462.47 86.28 462.47 86.28 461.19 93C459.91 86.28 459.91 86.28 453.19 85C459.91 83.72 459.91 83.72 461.19 77Z"/></g>
-              <g class="ring-spark" style="--k:1"><path d="M417.46 458.34C418.42 463.38 418.42 463.38 423.46 464.34C418.42 465.3 418.42 465.3 417.46 470.34C416.5 465.3 416.5 465.3 411.46 464.34C416.5 463.38 416.5 463.38 417.46 458.34Z"/></g>
-              <g class="ring-spark" style="--k:2"><path d="M83.77 455.76C84.89 461.64 84.89 461.64 90.77 462.76C84.89 463.88 84.89 463.88 83.77 469.76C82.65 463.88 82.65 463.88 76.77 462.76C82.65 461.64 82.65 461.64 83.77 455.76Z"/></g>
-              <g class="ring-spark" style="--k:3"><path d="M29.48 95.75C30.36 100.37 30.36 100.37 34.98 101.25C30.36 102.13 30.36 102.13 29.48 106.75C28.6 102.13 28.6 102.13 23.98 101.25C28.6 100.37 28.6 100.37 29.48 95.75Z"/></g>
-            </svg>
-            <div class="medallion-core">
-              <img class="medallion-logo" src="assets/img/logo.webp" alt="" width="600" height="600">
-              <i class="core-shine"></i>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="medallion">
+              <div class="medallion-glow"></div>
+              <svg class="medallion-ring" viewBox="0 0 500 500">
+                <defs>
+                  <path id="ring-arc-top" d="M46 250A204 204 0 0 1 454 250"/>
+                  <path id="ring-arc-bottom" d="M33 250A217 217 0 0 0 467 250"/>
+                  <linearGradient id="ring-comet-fade" gradientUnits="userSpaceOnUse" x1="414.61" y1="67.19" x2="496" y2="250"><stop offset="0" stop-color="#F6E3B0" stop-opacity="0"/><stop offset="1" stop-color="#FFF4D6"/></linearGradient>
+                  <filter id="ring-comet-glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3"/></filter>
+                </defs>
+                <circle class="ring-line ring-draw" cx="250" cy="250" r="246" pathLength="1"/>
+                <circle class="ring-line ring-line--fine ring-draw" cx="250" cy="250" r="194" pathLength="1"/>
+                <g class="ring-comet">
+                  <path d="M414.61 67.19A246 246 0 0 1 496 250" fill="none" stroke="url(#ring-comet-fade)" stroke-width="2.2" stroke-linecap="round"/>
+                  <circle cx="496" cy="250" r="6" fill="#F6E3B0" opacity=".55" filter="url(#ring-comet-glow)"/>
+                  <circle cx="496" cy="250" r="2.4" fill="#FFF8E6"/>
+                </g>
+                <g class="ring-deco">
+                  <circle class="ring-line ring-line--dashed" cx="250" cy="250" r="186"/>
+                  <circle class="ring-bead" cx="436" cy="250" r="3"/>
+                  <circle class="ring-bead" cx="250" cy="436" r="3"/>
+                  <circle class="ring-bead" cx="64" cy="250" r="3"/>
+                  <circle class="ring-bead" cx="250" cy="64" r="3"/>
+                  <circle class="ring-bead ring-bead--sm" cx="381.52" cy="381.52" r="1.8"/>
+                  <circle class="ring-bead ring-bead--sm" cx="118.48" cy="381.52" r="1.8"/>
+                  <circle class="ring-bead ring-bead--sm" cx="118.48" cy="118.48" r="1.8"/>
+                  <circle class="ring-bead ring-bead--sm" cx="381.52" cy="118.48" r="1.8"/>
+                </g>
+                <g class="ring-words">
+                  <text class="ring-text"><textPath href="#ring-arc-top" startOffset="50%" text-anchor="middle">PREMIUM PERSIAN PISTACHIO</textPath></text>
+                  <text class="ring-text"><textPath href="#ring-arc-bottom" startOffset="50%" text-anchor="middle">FROM THE ORCHARDS OF IRAN</textPath></text>
+                  <g class="ring-stars"><path d="M40 243C41.12 248.88 41.12 248.88 47 250C41.12 251.12 41.12 251.12 40 257C38.88 251.12 38.88 251.12 33 250C38.88 248.88 38.88 248.88 40 243Z"/><path d="M460 243C461.12 248.88 461.12 248.88 467 250C461.12 251.12 461.12 251.12 460 257C458.88 251.12 458.88 251.12 453 250C458.88 248.88 458.88 248.88 460 243Z"/></g>
+                </g>
+                <g class="ring-spark" style="--k:0"><path d="M461.19 77C462.47 83.72 462.47 83.72 469.19 85C462.47 86.28 462.47 86.28 461.19 93C459.91 86.28 459.91 86.28 453.19 85C459.91 83.72 459.91 83.72 461.19 77Z"/></g>
+                <g class="ring-spark" style="--k:1"><path d="M417.46 458.34C418.42 463.38 418.42 463.38 423.46 464.34C418.42 465.3 418.42 465.3 417.46 470.34C416.5 465.3 416.5 465.3 411.46 464.34C416.5 463.38 416.5 463.38 417.46 458.34Z"/></g>
+                <g class="ring-spark" style="--k:2"><path d="M83.77 455.76C84.89 461.64 84.89 461.64 90.77 462.76C84.89 463.88 84.89 463.88 83.77 469.76C82.65 463.88 82.65 463.88 76.77 462.76C82.65 461.64 82.65 461.64 83.77 455.76Z"/></g>
+                <g class="ring-spark" style="--k:3"><path d="M29.48 95.75C30.36 100.37 30.36 100.37 34.98 101.25C30.36 102.13 30.36 102.13 29.48 106.75C28.6 102.13 28.6 102.13 23.98 101.25C28.6 100.37 28.6 100.37 29.48 95.75Z"/></g>
+              </svg>
+              <div class="medallion-core">
+                <img class="medallion-logo" src="assets/img/logo.webp" alt="" width="600" height="600">
+                <i class="core-shine"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <a class="scroll-cue" href="#about"><span>کشف کنید</span><i aria-hidden="true"></i></a>
-    </section>
+        <a class="scroll-cue" href="#about"><span>کشف کنید</span><i aria-hidden="true"></i></a>
+      </section>
 
-    <!-- ============ Price ticker (filled from the daily price data; variety names are the fallback). The whole strip links to the price board. ============ -->
-    <a class="marquee marquee--ticker" href="prices.html" data-price-ticker>
-      <span class="ticker-label"><i class="live-dot" aria-hidden="true"></i>قیمت روز</span>
-      <div class="marquee-track" aria-hidden="true">
-        <div class="marquee-group">
-          <span class="mq-fa">اکبری</span><span class="mq-en">Akbari</span><i>✦</i>
-          <span class="mq-fa">احمدآقایی</span><span class="mq-en">Ahmad Aghaei</span><i>✦</i>
-          <span class="mq-fa">کله‌قوچی</span><span class="mq-en">Kalleh Ghouchi</span><i>✦</i>
-          <span class="mq-fa">فندقی</span><span class="mq-en">Fandoghi</span><i>✦</i>
-          <span class="mq-fa">بادامی</span><span class="mq-en">Badami</span><i>✦</i>
+      <!-- ============ Price ticker (filled from the daily price data; variety names are the fallback). The whole strip links to the price board. ============ -->
+      <a class="marquee marquee--ticker" href="prices.html" data-price-ticker>
+        <span class="ticker-label"><i class="live-dot" aria-hidden="true"></i>قیمت روز</span>
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-group">
+            <span class="mq-fa">اکبری</span><span class="mq-en">Akbari</span><i>✦</i>
+            <span class="mq-fa">احمدآقایی</span><span class="mq-en">Ahmad Aghaei</span><i>✦</i>
+            <span class="mq-fa">کله‌قوچی</span><span class="mq-en">Kalleh Ghouchi</span><i>✦</i>
+            <span class="mq-fa">فندقی</span><span class="mq-en">Fandoghi</span><i>✦</i>
+            <span class="mq-fa">بادامی</span><span class="mq-en">Badami</span><i>✦</i>
+          </div>
+          <div class="marquee-group">
+            <span class="mq-fa">اکبری</span><span class="mq-en">Akbari</span><i>✦</i>
+            <span class="mq-fa">احمدآقایی</span><span class="mq-en">Ahmad Aghaei</span><i>✦</i>
+            <span class="mq-fa">کله‌قوچی</span><span class="mq-en">Kalleh Ghouchi</span><i>✦</i>
+            <span class="mq-fa">فندقی</span><span class="mq-en">Fandoghi</span><i>✦</i>
+            <span class="mq-fa">بادامی</span><span class="mq-en">Badami</span><i>✦</i>
+          </div>
         </div>
-        <div class="marquee-group">
-          <span class="mq-fa">اکبری</span><span class="mq-en">Akbari</span><i>✦</i>
-          <span class="mq-fa">احمدآقایی</span><span class="mq-en">Ahmad Aghaei</span><i>✦</i>
-          <span class="mq-fa">کله‌قوچی</span><span class="mq-en">Kalleh Ghouchi</span><i>✦</i>
-          <span class="mq-fa">فندقی</span><span class="mq-en">Fandoghi</span><i>✦</i>
-          <span class="mq-fa">بادامی</span><span class="mq-en">Badami</span><i>✦</i>
-        </div>
-      </div>
-    </a>
+      </a>
+    </div>
 
     <!-- ============ About ============ -->
     <section class="section section--light about" id="about">
